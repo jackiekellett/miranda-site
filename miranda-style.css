@@ -1,65 +1,181 @@
+/* 
+Designed by jackiekellett 
+	GitHub: https://github.com/jackiekellett  
+*/
+
 /* Imports */
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nabla&display=swap');
+
 
 /* Root */ 
 * {
-	font-family: 'Poiret One', sans-serif;
+	--dark: #000;
+	--transdark: #ccc;
+	--bgcolor: #fff;
+	--bright: #ff4500;
+	--light: #bfecff;
 }
+
+
 
 /* HTML */
 html {
+	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
-	background-color: black;
-	padding: 0;
+	background-color: var(--bgcolor);
+	padding: 0.1em;
 	margin: 0;
-	color: white;
 }
 
 /* Body */
 body {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	margin: 0;
+	padding: 0 0.8em;
 }
 
+/* Header */
 header {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-h1 {
-	font-family: 'Poiret One', sans-serif;
-	font-size: 3rem;
-}
-
-nav{
-	width: 40%;
-	font-size: 1.5rem;
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nabla', cursive;
+	font-size: 2em;
+}
+
+h1>a {
+	padding: 0.2em;
+}
+
+/* Nav */
+nav{
+	font-size: 1.15em;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
 a{
 	text-decoration: none;
-	color: white;
+	color: var(--bright);
+}
+
+a:hover{
+	font-weight: bold;
+	text-decoration: underline wavy 0.08em;
 }
 
 nav>p>a {
-	padding: .5rem;
-	margin: .5rem;
+	padding: 0.5em;
+	margin: 0 0.7em;
 }
 
-.top-link:hover {
-	color: red;
+nav>p>a:hover {
+	font-weight: bold;
+	text-decoration: underline wavy;
 }
 
+
+/* MAIN */
 main {
-	color:white;
-	font-size: 1rem;
+	color: var(--dark);
+	font-size: 1.05em;
+	display: flex;
+	flex-direction: column;
 }
+
+/* SECTION */
+section {
+	padding: 0 0.7em;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+  }
+
+/* GALLERY IMAGES */
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.gallery img {
+	padding: 1em 0;
+	max-width: 100%;
+	margin: 1em;
+}
+
+/* Footer */
+footer {
+	color: var(--bright);
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* INDEX */
+.showcase {
+	width: 100%;
+	content: url(https://www.marinello.art/images/showcase/pcookietransparent.png);
+	animation: ani 7.5s infinite;
+	
+}
+
+@keyframes ani {
+	0% {content: url(https://www.marinello.art/images/showcase/showcase1.jpg);}
+	33% {content: url(https://www.marinello.art/images/showcase/showcase2.jpg);}
+	66% {content: url(https://www.marinello.art/images/showcase/showcase3.jpg);}
+	100% {content: url(https://www.marinello.art/images/showcase/showcase1.jpg);}
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 768px) {
+	body{
+		margin: 2em 3em;
+	}
+	header {
+		justify-content: space-between;
+		font-size: 1.5em;
+	}
+	h1 {
+		font-size: 2.5em;
+	}
+	section {
+		display: flex;
+		flex-direction: row;
+		max-width: 60%;
+	}
+	section>div {
+		width: 100%;
+	}
+	.pregallery {
+		margin: 0 1em 0 3em;
+		display: flex;
+		flex-direction: column;
+	}
+	.gallery img {
+		max-width: 20%;
+	}
+}
+
+
